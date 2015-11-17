@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/wl_mot"
+        android:layout_width="match_parent"
+        android:layout_height="95px"
+        android:background="#347C17" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Word Iist"
+            android:textColor="#ffffff"
+            android:textSize="27dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <Spinner
+        android:background="#ffffff"
+        android:id="@+id/spinner"
+        android:layout_marginTop="7dp"
+        android:layout_below="@+id/wl_mot"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+         />
+    <LinearLayout 
+        android:layout_marginTop="3dp"
+        android:layout_height="0.5dp"
+        android:id="@+id/cvcc"
+        android:layout_below="@+id/spinner"
+        android:layout_marginLeft="30dp"
+        android:background="#347C17"
+        android:layout_width="match_parent"
+        android:layout_marginRight="30dp"
+        ></LinearLayout>
+
+    <ListView
+        android:id="@+id/wl_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cvcc"
+        android:layout_marginTop="8dp" >
+    </ListView>
+
+</RelativeLayout>

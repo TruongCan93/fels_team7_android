@@ -1,0 +1,203 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/mot"
+        android:layout_width="match_parent"
+        android:layout_height="95px"
+        android:background="#347C17" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Profile"
+            android:textColor="#ffffff"
+            android:textSize="27dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/hai"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:layout_below="@+id/mot"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/avatar_ho"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="0dp"
+            android:layout_toRightOf="@+id/avatar_ho"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/full_name_icon_ho"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar" />
+
+                <TextView
+                    android:id="@+id/full_name_ho"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/full_name_icon_ho"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/full_name_icon_ho"
+                    android:singleLine="true"
+                    android:text="Nguyen Van A"
+                    android:textColor="#347C17"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <ImageView
+                    android:id="@+id/email_icon_ho"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/email" />
+
+                <TextView
+                    android:id="@+id/email_ho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/email_icon_ho"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/email_icon_ho"
+                    android:singleLine="true"
+                    android:text="truongcan93@yahoo.com.vn"
+                    android:textColor="#347C17"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <ImageView
+                    android:id="@+id/learned_icon_ho"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/doccument" />
+
+                <TextView
+                    android:id="@+id/learned_ho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/learned_icon_ho"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/learned_icon_ho"
+                    android:singleLine="true"
+                    android:text="Learned 0 words"
+                    android:textColor="#347C17"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/edit_ho"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/edit" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ba"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/hai"
+        android:background="#4AA02c" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ba"
+        android:background="#ffffff" >
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_le"
+        style="@style/scrollbar_shape_style"
+        android:divider="#ffffff"
+        android:dividerHeight="0.01px"
+        android:layout_below="@+id/ba" />
+
+    <LinearLayout
+        android:id="@+id/bon"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/nam"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="#4AA02c" >
+    </LinearLayout>
+
+    
+
+    <RelativeLayout
+        android:id="@+id/nam"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff" >
+
+        <Button
+            android:id="@+id/word_list_ho"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/btn_bg_red"
+            android:text="Words List"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/lesson_ho"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_bg_red"
+            android:text="Lesson"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

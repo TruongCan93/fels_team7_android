@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="95px"
+        android:background="#347C17" >
+
+        <Button
+            android:id="@+id/previous_ca"
+            android:layout_width="95px"
+            android:layout_height="95px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/previous_xml" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Category"
+            android:textColor="#ffffff"
+            android:textSize="27dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <ListView
+        android:layout_marginTop="10dp"
+        android:dividerHeight="0.01px"
+        android:divider="#ffffff"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/list_category"
+        />
+
+</LinearLayout>

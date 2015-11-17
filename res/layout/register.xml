@@ -1,0 +1,222 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="95px"
+        android:background="#347C17" >
+
+        <Button
+            android:id="@+id/previous_re"
+            android:layout_width="95px"
+            android:layout_height="95px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/previous_xml" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Register"
+            android:textColor="#ffffff"
+            android:textSize="27dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="wrap_content"
+            android:layout_height="95px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/bt_done"
+            android:text="Done"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp" >
+
+        <ImageView
+            android:id="@+id/email_icon_re"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/email" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/email_icon_re"
+            android:text="Email"
+            android:textColor="#347C17"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_email_re"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/email_icon_re"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_bg"
+            android:singleLine="true"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/password_icon_re"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/password" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/password_icon_re"
+            android:text="Password"
+            android:textColor="#347C17"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_pass_re"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/password_icon_re"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_bg"
+            android:singleLine="true"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/retype_password_icon_re"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/password" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/retype_password_icon_re"
+            android:text="Retype Password"
+            android:textColor="#347C17"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_retype_pass_re"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/retype_password_icon_re"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_bg"
+            android:singleLine="true"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/full_name_icon_re"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/doccument" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/full_name_icon_re"
+            android:text="Full Name"
+            android:textColor="#347C17"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edit_full_name_re"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/full_name_icon_re"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_bg"
+            android:singleLine="true"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/avatar_icon_re"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/avatar_icon_re"
+            android:text="Avatar"
+            android:textColor="#347C17"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/avatar_image_re"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/avatar_icon_re"
+            android:layout_marginRight="26dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher" />
+    </RelativeLayout>
+
+</LinearLayout>

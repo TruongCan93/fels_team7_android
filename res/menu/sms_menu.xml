@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/show_result_home"
+        android:title="Show"
+        />
+    <item android:id="@+id/delete_lesson_home"
+        android:title="Delete"
+        />
+
+</menu>
