@@ -73,6 +73,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_bg"
             android:singleLine="true"
+            android:text="a@yahoo.com"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -109,6 +110,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_bg"
             android:singleLine="true"
+            android:text="134567"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -145,6 +147,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_bg"
             android:singleLine="true"
+            android:text="134567"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -181,6 +184,7 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_bg"
             android:singleLine="true"
+            android:text="chan vai"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -217,6 +221,19 @@
             android:layout_marginRight="26dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher" />
+
+        <TextView
+           	android:layout_centerVertical="true"
+            android:id="@+id/toast_re"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="140dp"
+            android:layout_marginTop="5dp"
+            android:text="Thong bao o day"
+            android:textColor="#ff4500"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </LinearLayout>

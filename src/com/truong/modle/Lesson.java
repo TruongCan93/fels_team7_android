@@ -8,11 +8,15 @@ public class Lesson {
 	public static Animation go_next_in, go_next_out, go_prev_in, go_prev_out,
 			scale_toast;
 	public static String Category_id, User_id, Lesson_id;
-	public static ArrayList<LessonWord> allWord = new ArrayList<LessonWord>();
+//	public static ArrayList<LessonWord> allWord = new ArrayList<LessonWord>();
 	public static int index;
 	public static int result = 0;
 	public static String perent_id;
 	public static String delete_id;
+	
+	public static String action="";
+	
+	public static ArrayList<Lesson> data;
 
 	public String id;
 

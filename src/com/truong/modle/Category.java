@@ -3,7 +3,6 @@ package com.truong.modle;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
 
 import com.truong.http.UserFunctions;
 
@@ -14,30 +13,23 @@ public class Category {
 
 	int id;
 	String name;
-	String image;
-	Bitmap bitmap;
+	String created_at;
 
-	public Bitmap getBitmap() {
-		return bitmap;
+	
+
+	public String getCreated_at() {
+		return created_at;
 	}
 
-	public void setBitmap(Bitmap bitmap) {
-		this.bitmap = bitmap;
+	public void setCreated_at(String created_at) {
+		this.created_at = created_at;
 	}
 
-	public Category(int id, String name, String image) {
+	public Category(int id, String name, String created_at) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.image = image;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
+		this.created_at = created_at;
 	}
 
 	public int getId() {

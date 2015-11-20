@@ -35,11 +35,8 @@ public class JSONParser {
 	public JSONParser() {
 	}
 
-	public void doConnect(String url, String method, Uri.Builder builder) {
+	public void doConnect(String url, String method, String  query) {
 		result.setLength(0);
-		// convert the NameValuePairs to a Stream which can be written to the
-		// HttpURLConnection
-		String query = builder.build().getEncodedQuery();
 
 		if (method.equals("POST")) {
 			// request method is POST
@@ -52,7 +49,8 @@ public class JSONParser {
 
 				conn.setRequestMethod("POST");
 
-				conn.setRequestProperty("Accept-Charset", charset);
+//				conn.setRequestProperty("Accept-Charset", charset);
+				conn.setRequestProperty("Content-Type", "application/json");
 
 				conn.setReadTimeout(10000);
 				conn.setConnectTimeout(60000);
@@ -66,7 +64,7 @@ public class JSONParser {
 				os.close();
 
 				conn.connect();
-
+				Log.d("Truong", "Success");
 			} catch (IOException e) {
 				e.printStackTrace();
 				Log.d("Truong", "loi 1" + e);
@@ -83,7 +81,8 @@ public class JSONParser {
 
 				conn.setRequestMethod("GET");
 
-				conn.setRequestProperty("Accept-Charset", charset);
+//				conn.setRequestProperty("Accept-Charset", charset);
+				conn.setRequestProperty("Content-Type", "application/json");
 
 				conn.setConnectTimeout(15000);
 
@@ -112,11 +111,11 @@ public class JSONParser {
 		
 		conn.disconnect();
 	}
-
+	
 	public JSONObject makeHttpRequest(String url, String method,
-			Uri.Builder builder) {
+			JSONObject jsonObject) {
 
-		doConnect(url, method, builder);
+		doConnect(url, method, jsonObject.toString());
 		Log.d("Truong", "Gia tri result "+result.toString());
 
 		// try parse the string to a JSON object
@@ -129,11 +128,11 @@ public class JSONParser {
 		// return JSON Object
 		return jObj;
 	}
-
+	
 	public JSONArray getJsonArrayFromUrl(String url, String method,
-			Uri.Builder builder) {
+			String jsonObject) {
 
-		doConnect(url, method, builder);
+		doConnect(url, method, jsonObject);
 		Log.d("Truong", "Gia tri result "+result.toString());
 		// try parse the string to a JSON object
 		try {
@@ -145,4 +144,6 @@ public class JSONParser {
 		// return JSON Object
 		return jArr;
 	}
+	
+	
 }

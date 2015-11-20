@@ -1,57 +1,26 @@
 package com.truong.http;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.net.Uri;
 import android.util.Log;
 
+import com.example.e_learnning.WordList;
+import com.truong.modle.Lesson;
+import com.truong.modle.User;
+
 public class UserFunctions {
-	// private static final String Url_login =
-	// "http://192.168.1.40:3030/elearnning/elearnning_api/index.php";
-	//
-	// private static final String Url_register =
-	// "http://192.168.1.64/ServerAndroidDemo/";
-	//
-	// private static final String Url_load_Category =
-	// "http://192.168.1.40:3030/elearnning/elearnning_api/category.php";
-	//
-	// private static final String Url_create_lesson =
-	// "http://192.168.1.40:3030/elearnning/elearnning_api/lesson.php";
-	//
-	// private static final String Url_create_lesson_word =
-	// "http://192.168.1.40:3030/elearnning/elearnning_api/lesson_word.php";
-	//
-	// private static final String Url_load_question =
-	// "http://192.168.1.40:3030/elearnning/elearnning_api/load_question.php";
-	//
-	// private static final String Url_update_lesson_word =
-	// "http://192.168.1.40:3030/elearnning/elearnning_api/update_question.php";
 
-	// ======================================================================================
-	private static final String Url_login = "http://192.168.137.1:3030/elearnning/elearnning_api/index.php";
+	private static final String Url_login = "https://protected-earth-1676.herokuapp.com/login.json";
 
-	private static final String Url_register = "http://192.168.137.1/ServerAndroidDemo/";
+	private static final String Url_register = "https://protected-earth-1676.herokuapp.com/users.json";
 
-	private static final String Url_load_Category = "http://192.168.137.1:3030/elearnning/elearnning_api/category.php";
+	private static final String Url_load_categorys = "https://protected-earth-1676.herokuapp.com/categories.json";
 
-	private static final String Url_create_lesson = "http://192.168.137.1:3030/elearnning/elearnning_api/lesson.php";
+	private static final String Url_lesson = "https://protected-earth-1676.herokuapp.com/users/5/lessons.json";
 
-	private static final String Url_create_lesson_word = "http://192.168.137.1:3030/elearnning/elearnning_api/lesson_word.php";
-
-	private static final String Url_load_question = "http://192.168.137.1:3030/elearnning/elearnning_api/load_question.php";
-
-	private static final String Url_update_lesson_word = "http://192.168.137.1:3030/elearnning/elearnning_api/update_question.php";
-
-	private static final String Url_update_lesson_result = "http://192.168.137.1:3030/elearnning/elearnning_api/update_result.php";
-
-	private static final String Url_load_lesson = "http://192.168.137.1:3030/elearnning/elearnning_api/load_lesson.php";
-
-	private static final String Url_delete_lesson = "http://192.168.137.1:3030/elearnning/elearnning_api/delete_lesson.php";
-
-	private static final String Url_load_lesson_detail = "http://192.168.137.1:3030/elearnning/elearnning_api/load_lesson_detail.php";
-
-	private static final String Url_load_word = "http://192.168.137.1:3030/elearnning/elearnning_api/word.php";
+	private static final String Url_load_word = "https://protected-earth-1676.herokuapp.com/users/3/words.json";
 
 	JSONParser parser;
 
@@ -59,141 +28,100 @@ public class UserFunctions {
 		parser = new JSONParser();
 	}
 
+	public JSONArray getListWord() {
+		JSONArray jArr;
+		Log.d("Truong", "Chan vai"+Lesson.action);
+		if (Lesson.action.equals("Filter not learn"))
+			jArr = parser.getJsonArrayFromUrl(Url_load_word
+					+ "?utf8=✓&category=" + WordList.category_id
+					+ "&commit=Filter", "GET", "");
+		else if (Lesson.action.equals("Filter has learn"))
+			jArr = parser.getJsonArrayFromUrl(Url_load_word
+					+ "?utf8=✓&category=" + WordList.category_id + "&learn="
+					+ WordList.learn + "&commit=Filter", "GET", "");
+		else
+			jArr = parser.getJsonArrayFromUrl(Url_load_word, "GET", "");
+
+		if (null != jArr)
+			return jArr;
+		return null;
+	}
+
+	public JSONArray getLessonById(String user_id) {
+		JSONArray jArr = parser.getJsonArrayFromUrl(
+				"https://protected-earth-1676.herokuapp.com/users/" + user_id
+						+ "/lessons.json", "GET", "");
+		if (jArr != null)
+			return jArr;
+		return null;
+	}
+
+	public JSONObject createLesson(String category_id) {
+		JSONObject object = new JSONObject();
+		JSONObject lesson = new JSONObject();
+
+		try {
+			lesson.put("category_id", category_id);
+			lesson.put("user_id", User.id + "");
+			object.put("lesson", lesson);
+			Log.d("Truong", object.toString());
+		} catch (Exception e) {
+			// TODO: handexception
+			e.printStackTrace();
+			Log.d("Truong", "Loi login of UserFunctions.class " + e);
+		}
+		JSONObject json = parser.makeHttpRequest(Url_lesson, "POST", object);
+
+		if (json != null)
+			return json;
+		return null;
+	}
+
+	public JSONArray loadCategorys() {
+		JSONArray jArr = parser.getJsonArrayFromUrl(Url_load_categorys, "GET",
+				"");
+		if (jArr != null)
+			return jArr;
+		return null;
+	}
+
+	public JSONObject registerUser(String name, String email, String password,
+			String password_confirmation) {
+		Log.d("Truong", name + email + password + password_confirmation);
+		JSONObject object = new JSONObject();
+		JSONObject user = new JSONObject();
+		try {
+			user.put("password_confirmation", password_confirmation);
+			user.put("password", password);
+			user.put("email", email);
+			user.put("name", name);
+			object.put("user", user);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			Log.d("Truong", "Loi register +" + e);
+		}
+		JSONObject json = parser.makeHttpRequest(Url_register, "POST", object);
+		if (json != null)
+			return json;
+		return null;
+	}
+
 	public JSONObject loginUser(String email, String password) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "login");
-		builder.appendQueryParameter("EMAIL", email);
-		builder.appendQueryParameter("PASSWORD", password);
-		Log.d("Truong", "Login User completed");
-		JSONObject json = parser.makeHttpRequest(Url_login, "POST", builder);
-		if (json != null)
-			return json;
-		return null;
-	}
+		JSONObject object = new JSONObject();
+		JSONObject session = new JSONObject();
 
-	public JSONObject Register(String name, String email, String password) {
-		// List<NameValuePair> valuePair = new ArrayList<NameValuePair>();
-		// valuePair.add(new BasicNameValuePair("NAME", name));
-		// valuePair.add(new BasicNameValuePair("TAG", "login"));
-		// valuePair.add(new BasicNameValuePair("EMAIL", email));
-		// valuePair.add(new BasicNameValuePair("PASSWORD", password));
-		// JSONObject object = parser.getJsonFormUrl(Url_register, valuePair);
-		// return object;
-		return null;
-	}
+		try {
+			session.put("email", email);
+			session.put("password", password);
+			object.put("session", session);
+		} catch (Exception e) {
+			// TODO: handexception
+			e.printStackTrace();
+			Log.d("Truong", "Loi login of UserFunctions.class " + e);
+		}
+		JSONObject json = parser.makeHttpRequest(Url_login, "POST", object);
 
-	public JSONArray loadCategory() {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "category");
-		Log.d("Truong", "Load Category completed");
-		JSONArray json = parser.getJsonArrayFromUrl(Url_load_Category, "POST",
-				builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONObject createLesson(String user_id, String category_id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "create");
-		builder.appendQueryParameter("USER_ID", user_id);
-		builder.appendQueryParameter("CATEGORY_ID", category_id);
-		Log.d("Truong", "Create Lesson completed");
-		JSONObject json = parser.makeHttpRequest(Url_create_lesson, "POST",
-				builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONArray createLessonWord(String lesson_id, String category_id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "create");
-		builder.appendQueryParameter("LESSON_ID", lesson_id);
-		builder.appendQueryParameter("CATEGORY_ID", category_id);
-		Log.d("Truong", "Create Lesson word completed");
-		JSONArray json = parser.getJsonArrayFromUrl(Url_create_lesson_word,
-				"POST", builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONObject loadQuestion(String id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "load");
-		builder.appendQueryParameter("WORD_ID", id);
-		Log.d("Truong", "Create word completed");
-		JSONObject json = parser.makeHttpRequest(Url_load_question, "POST",
-				builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONObject updateQuestion(String id, String word_answer_id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "update");
-		builder.appendQueryParameter("ID", id);
-		builder.appendQueryParameter("WORD_ANSWER_ID", word_answer_id);
-		JSONObject json = parser.makeHttpRequest(Url_update_lesson_word,
-				"POST", builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONObject updateLessonResult(String value, String lesson_id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "update");
-		builder.appendQueryParameter("ID", lesson_id);
-		builder.appendQueryParameter("RESULT", value);
-		JSONObject json = parser.makeHttpRequest(Url_update_lesson_result,
-				"POST", builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONArray loadLesson(String user_id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "load");
-		builder.appendQueryParameter("USER_ID", user_id);
-		JSONArray json = parser.getJsonArrayFromUrl(Url_load_lesson, "POST",
-				builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONObject deleteLesson(String lesson_id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "delete");
-		builder.appendQueryParameter("ID", lesson_id);
-		JSONObject json = parser.makeHttpRequest(Url_delete_lesson, "POST",
-				builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONArray loadLessonDetail(String id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "load");
-		builder.appendQueryParameter("ID", id);
-		JSONArray json = parser.getJsonArrayFromUrl(Url_load_lesson_detail,
-				"POST", builder);
-		if (json != null)
-			return json;
-		return null;
-	}
-
-	public JSONArray loadWordByCategoryId(String category_id) {
-		Uri.Builder builder = new Uri.Builder();
-		builder.appendQueryParameter("TAG", "load");
-		builder.appendQueryParameter("ID", category_id);
-		JSONArray json = parser.getJsonArrayFromUrl(Url_load_word, "POST",
-				builder);
 		if (json != null)
 			return json;
 		return null;
