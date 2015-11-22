@@ -2,8 +2,6 @@ package com.truong.modle;
 
 import java.util.ArrayList;
 
-import android.content.Context;
-
 public class User {
 	public static int id;
 	public static String email;
@@ -13,6 +11,8 @@ public class User {
 	public static String lessn_id;
 	public static String category_id;
 	public static String Action;
+
+	public static ArrayList<ResutlModle> result = new ArrayList<ResutlModle>();
 	public static ArrayList<String> data;
 
 	String mEmail;

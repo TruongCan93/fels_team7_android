@@ -36,8 +36,8 @@
 
         <ImageView
             android:id="@+id/img_le"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:scaleType="centerCrop"
@@ -91,6 +91,9 @@
                 android:layout_below="@+id/lesson_toast"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:background="@drawable/btn_bg_green"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:text="Start" />
         </RelativeLayout>
         <RelativeLayout

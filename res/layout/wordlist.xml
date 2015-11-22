@@ -39,22 +39,22 @@
 
     <Button
         android:id="@+id/filter"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_bg_red"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/spinner"
-        android:text="Filter" />
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_bg_red"
+        android:text="Filter"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <RadioGroup
-        android:layout_below="@+id/spinner"
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
         android:orientation="vertical" >
 
         <RadioButton
@@ -89,12 +89,13 @@
 
     <ListView
         android:id="@+id/wl_list"
-        android:dividerHeight="0.5px"
-        android:divider="#ffffff"
+        style="@style/scrollbar_shape_style"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/cvcc"
-        android:layout_marginTop="8dp" >
+        android:layout_marginTop="8dp"
+        android:divider="#ffffff"
+        android:dividerHeight="0.5px" >
     </ListView>
 
 </RelativeLayout>

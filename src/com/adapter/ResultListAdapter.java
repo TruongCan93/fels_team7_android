@@ -7,14 +7,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.e_learnning.R;
-import com.truong.modle.Lesson;
+import com.truong.modle.ResutlModle;
 
-public class LessonAdapter extends BaseAdapter {
-	ArrayList<Lesson> data;
+public class ResultListAdapter extends BaseAdapter {
+	ArrayList<ResutlModle> data;
 	Context context;
+
+	public ResultListAdapter(ArrayList<ResutlModle> data, Context context) {
+		super();
+		this.data = data;
+		this.context = context;
+	}
 
 	@Override
 	public int getCount() {
@@ -26,12 +33,6 @@ public class LessonAdapter extends BaseAdapter {
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
 		return data.get(position);
-	}
-
-	public LessonAdapter(ArrayList<Lesson> data, Context context) {
-		super();
-		this.data = data;
-		this.context = context;
 	}
 
 	@Override
@@ -49,25 +50,30 @@ public class LessonAdapter extends BaseAdapter {
 		if (convertView != null)
 			hodle = (ViewHodle) convertView.getTag();
 		else {
+			convertView = inflater.inflate(R.layout.result_item, parent, false);
 			hodle = new ViewHodle();
-			convertView = inflater.inflate(R.layout.lesson_item, parent, false);
-			hodle.category = (TextView) convertView.findViewById(R.id.le_ca);
-			hodle.time = (TextView) convertView.findViewById(R.id.le_time);
+			hodle.word = (TextView) convertView.findViewById(R.id.result_word);
+			hodle.answer = (TextView) convertView
+					.findViewById(R.id.result_answer);
+			hodle.image = (ImageView) convertView
+					.findViewById(R.id.check_result);
 			convertView.setTag(hodle);
 		}
-		hodle.time.setText(data.get(position).getCreated_at());
-		if (data.get(position).getCategory_id().equals("1"))
-			hodle.category.setText("Basic 500 words");
-		else if (data.get(position).getCategory_id().equals("2"))
-			hodle.category.setText("Family");
-		else if (data.get(position).getCategory_id().equals("3"))
-			hodle.category.setText("Fruit");
+		hodle.word.setText(data.get(position).getContent());
+		hodle.answer.setText(data.get(position).getAnswer());
+		if (data.get(position).isCheck())
+			hodle.image.setImageDrawable(this.context.getResources()
+					.getDrawable(R.drawable.true_img));
+		else
+			hodle.image.setImageDrawable(this.context.getResources()
+					.getDrawable(R.drawable.fale_img));
 		return convertView;
 	}
 
 	private class ViewHodle {
-		TextView category;
-		TextView time;
+		TextView word;
+		TextView answer;
+		ImageView image;
 	}
 
 }

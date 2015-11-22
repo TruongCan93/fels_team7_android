@@ -7,16 +7,25 @@ import android.view.animation.Animation;
 public class Lesson {
 	public static Animation go_next_in, go_next_out, go_prev_in, go_prev_out,
 			scale_toast;
-	public static String Category_id, User_id, Lesson_id;
-//	public static ArrayList<LessonWord> allWord = new ArrayList<LessonWord>();
+	public static String Category_id, User_id, Lesson_id, created_at_le;
+	// public static ArrayList<LessonWord> allWord = new
+	// ArrayList<LessonWord>();
 	public static int index;
 	public static int result = 0;
 	public static String perent_id;
 	public static String delete_id;
-	
-	public static String action="";
-	
+
+	public static String action = "";
+
 	public static ArrayList<Lesson> data;
+
+	public static int getResult() {
+		return result;
+	}
+
+	public static void setResult(int result) {
+		Lesson.result = result;
+	}
 
 	public String id;
 

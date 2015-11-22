@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ba000000"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/buttonPanel"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/delete_img" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tb_id_le"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/result_le"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Id"
+        android:textColor="#64b255"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tb_result_le"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_id_le"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:text="Result"
+        android:textColor="#64b255"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tb_category_id_le"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_result_le"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:text="Category"
+        android:textColor="#64b255"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_created_at_le"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="16dp"
+        android:text="================================="
+        android:textColor="#f15a24" />
+
+    <ListView
+        android:id="@+id/result_list"
+        style="@style/scrollbar_shape_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_created_at_le"
+        android:layout_marginTop="25dp" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/result_le"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Chan vai"
+        android:textColor="#f68a1e"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tb_created_at_le"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tb_category_id_le"
+        android:layout_below="@+id/tb_category_id_le"
+        android:layout_marginTop="16dp"
+        android:text="Created_at"
+        android:textColor="#64b255"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -133,7 +133,7 @@ public class Home extends Activity {
 				.findViewById(R.id.tb_created_at);
 
 		id.setText("Id: " + lesson.getId());
-		result.setText("Result: null");
+		result.setText("Result: "+lesson.getLesson_result());
 		if (lesson.getCategory_id().equals("1"))
 			category.setText("Category: Basic 500 words");
 		else if (lesson.getCategory_id().equals("3"))

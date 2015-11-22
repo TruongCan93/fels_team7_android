@@ -22,6 +22,8 @@ public class UserFunctions {
 
 	private static final String Url_load_word = "https://protected-earth-1676.herokuapp.com/users/3/words.json";
 
+	private static final String Url_update_profile = "https://protected-earth-1676.herokuapp.com/users/3/edit";
+
 	JSONParser parser;
 
 	public UserFunctions() {
@@ -30,7 +32,7 @@ public class UserFunctions {
 
 	public JSONArray getListWord() {
 		JSONArray jArr;
-		Log.d("Truong", "Chan vai"+Lesson.action);
+		Log.d("Truong", "Chan vai" + Lesson.action);
 		if (Lesson.action.equals("Filter not learn"))
 			jArr = parser.getJsonArrayFromUrl(Url_load_word
 					+ "?utf8=✓&category=" + WordList.category_id
