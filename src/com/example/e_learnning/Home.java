@@ -32,7 +32,7 @@ import com.truong.modle.User;
 
 public class Home extends Activity {
 	Button btn_word_list, btn_lesson, previous_up;
-	TextView fullname, email;
+	TextView fullname, email,tt_home, learned_ho;
 	ViewFlipper viewFlipper;
 	ImageView edit_ho;
 	ListView list;
@@ -54,11 +54,18 @@ public class Home extends Activity {
 		previous_up = (Button) findViewById(R.id.previous_up);
 		fullname = (TextView) findViewById(R.id.full_name_ho);
 		email = (TextView) findViewById(R.id.email_ho);
+		learned_ho=(TextView)findViewById(R.id.learned_ho);
 		list = (ListView) findViewById(R.id.list_le);
+		tt_home=(TextView)findViewById(R.id.tt_home_tt);
 
 		// Set du lieu
 		fullname.setText(User.fullname);
 		email.setText(User.email);
+		
+		tt_home.setTypeface(MainActivity.tf5);
+		email.setTypeface(MainActivity.tf6);
+		fullname.setTypeface(MainActivity.tf6);
+		learned_ho.setTypeface(MainActivity.tf6);
 
 		Lesson.data = new ArrayList<Lesson>();
 		adapter = new LessonAdapter(Lesson.data, this);

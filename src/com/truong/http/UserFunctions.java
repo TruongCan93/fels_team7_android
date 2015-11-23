@@ -35,11 +35,11 @@ public class UserFunctions {
 		Log.d("Truong", "Chan vai" + Lesson.action);
 		if (Lesson.action.equals("Filter not learn"))
 			jArr = parser.getJsonArrayFromUrl(Url_load_word
-					+ "?utf8=✓&category=" + WordList.category_id
+					+ "?utf8=✓&category_id=" + WordList.category_id
 					+ "&commit=Filter", "GET", "");
 		else if (Lesson.action.equals("Filter has learn"))
 			jArr = parser.getJsonArrayFromUrl(Url_load_word
-					+ "?utf8=✓&category=" + WordList.category_id + "&learn="
+					+ "?utf8=✓&category_id=" + WordList.category_id + "&learn="
 					+ WordList.learn + "&commit=Filter", "GET", "");
 		else
 			jArr = parser.getJsonArrayFromUrl(Url_load_word, "GET", "");

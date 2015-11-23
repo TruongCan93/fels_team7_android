@@ -129,7 +129,7 @@
                     android:layout_width="270dp"
                     android:text="A"
                     android:textColor="#000000"
-                    android:textSize="18dp"
+                    android:textSize="22dp"
                     />
                 <Button
                     android:background="@drawable/btn_answer_bg"
@@ -139,7 +139,7 @@
                     android:layout_width="270dp"
                     android:text="B"
                     android:textColor="#000000"
-                    android:textSize="18dp"
+                    android:textSize="22dp"
                     />
                 <Button
                     android:background="@drawable/btn_answer_bg"
@@ -149,7 +149,7 @@
                     android:layout_width="270dp"
                     android:text="C"
                     android:textColor="#000000"
-                    android:textSize="18dp"
+                    android:textSize="22dp"
                     />
                 <Button
                     android:background="@drawable/btn_answer_bg"
@@ -159,7 +159,7 @@
                     android:layout_width="270dp"
                     android:textColor="#000000"
                     android:text="D"
-                    android:textSize="18dp"
+                    android:textSize="22dp"
                     />
             </LinearLayout>
         </RelativeLayout>

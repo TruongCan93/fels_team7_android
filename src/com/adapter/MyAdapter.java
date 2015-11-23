@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.e_learnning.MainActivity;
 import com.example.e_learnning.R;
 import com.truong.modle.Category;
 
@@ -59,6 +60,7 @@ public class MyAdapter extends BaseAdapter {
 			convertView.setTag(hodle);
 		}
 		hodle.title.setText(data.get(position).getName());
+		hodle.title.setTypeface(MainActivity.tf1);
 		hodle.body.setText(data.get(position).getCreated_at());
 		if (position == 0)
 			hodle.image.setImageDrawable(context.getResources().getDrawable(

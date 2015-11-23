@@ -6,6 +6,7 @@ import truong.shafre.SharePreUtils;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,11 +22,13 @@ import com.truong.modle.User;
 
 public class MainActivity extends Activity {
 	Button btn_login;
-	TextView txt_create, toast;
+	TextView txt_create, toast, login, email_icon, password_icon;
 	EditText email, password;
 
 	String mail, pass;
 	Bundle bundle;
+
+	public static Typeface tf1, tf3, tf4, tf5, tf6, tf7;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,17 @@ public class MainActivity extends Activity {
 		email = (EditText) findViewById(R.id.edit_email);
 		password = (EditText) findViewById(R.id.edit_password);
 		toast = (TextView) findViewById(R.id.toast);
+		login = (TextView) findViewById(R.id.login);
+		email_icon = (TextView) findViewById(R.id.email_tt);
+		password_icon = (TextView) findViewById(R.id.pass_tt);
+
+		loadTypeface();
+
+		login.setTypeface(tf1);
+		email_icon.setTypeface(tf3);
+		password_icon.setTypeface(tf3);
+		email.setTypeface(tf4);
+		password.setTypeface(tf4);
 
 		btn_login.setOnClickListener(loginOnClickListener());
 		btn_login.setOnTouchListener(loginOnTouchListener());
@@ -43,6 +57,16 @@ public class MainActivity extends Activity {
 
 		// Khoi tao bien
 		Category.functions = new UserFunctions();
+	}
+
+	public void loadTypeface() {
+		tf1 = Typeface.createFromAsset(getAssets(), "fonts/AGENTRED.TTF");
+
+		tf3 = Typeface.createFromAsset(getAssets(), "fonts/grease__.ttf");
+		tf4 = Typeface.createFromAsset(getAssets(), "fonts/UVF LH Line1 Sans Thin.ttf");
+		tf5 = Typeface.createFromAsset(getAssets(), "fonts/PotLand.ttf");
+		tf6 = Typeface.createFromAsset(getAssets(), "fonts/architep.ttf");
+		tf7=Typeface.createFromAsset(getAssets(), "fonts/Pony.ttf");
 	}
 
 	public View.OnClickListener newAcountListener() {
@@ -166,12 +190,12 @@ public class MainActivity extends Activity {
 				SharePreUtils.PASSWORD, "");
 		String reFullname = SharePreUtils.getString(MainActivity.this,
 				SharePreUtils.FULL_NAME, "");
-		
+
 		if (reUserid != "") {
 			User.id = Integer.parseInt(reUserid);
 			User.email = reEmail;
 			User.fullname = reFullname;
-			Log.d("Truong", "Chan "+reEmail+"---"+rePassword);
+			Log.d("Truong", "Chan " + reEmail + "---" + rePassword);
 			mail = User.email;
 			pass = rePassword;
 

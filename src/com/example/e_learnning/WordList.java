@@ -29,9 +29,10 @@ import com.truong.modle.User;
 public class WordList extends Activity {
 	Spinner spin;
 	ArrayList<String> dataSpinner;
-	ListView list;
+	public static ListView list;
 	RadioGroup radioGroup;
 	Button filter, previous;
+	TextView tt;
 
 	public static String category_id;
 	public static String learn;
@@ -49,6 +50,8 @@ public class WordList extends Activity {
 		list = (ListView) findViewById(R.id.wl_list);
 		radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 		filter = (Button) findViewById(R.id.filter);
+		tt=(TextView)findViewById(R.id.wl_tt_wl);
+		
 		dataSpinner = new ArrayList<String>();
 		User.data=new ArrayList<String>();
 		previous=(Button)findViewById(R.id.previous_wl);
@@ -56,6 +59,8 @@ public class WordList extends Activity {
 		for (Category part : Category.data) {
 			dataSpinner.add(part.getName());
 		}
+		
+		tt.setTypeface(MainActivity.tf5);
 
 		radioGroup.clearCheck();
 		adapter = new SpinnerAdapter(dataSpinner, this);
@@ -88,6 +93,7 @@ public class WordList extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+
 				RadioButton rb = (RadioButton) findViewById(radioGroup
 						.getCheckedRadioButtonId());
 				category_id = Category.data.get(position_spinner).getId() + "";

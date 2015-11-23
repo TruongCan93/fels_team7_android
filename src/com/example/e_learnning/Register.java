@@ -2,22 +2,20 @@ package com.example.e_learnning;
 
 import org.json.JSONObject;
 
-import com.truong.http.UserFunctions;
-import com.truong.modle.Category;
-
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.truong.http.UserFunctions;
+
 public class Register extends Activity {
 	Button previuous_re, done;
 	EditText email, password, retype_password, fullname;
-	TextView toast;
+	TextView toast, emal_tt, pass_tt, retype_tt, fullname_tt, ava_tt, tt_re;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +31,23 @@ public class Register extends Activity {
 		retype_password = (EditText) findViewById(R.id.edit_retype_pass_re);
 		fullname = (EditText) findViewById(R.id.edit_full_name_re);
 		toast = (TextView) findViewById(R.id.toast_re);
+		emal_tt = (TextView) findViewById(R.id.email_tt_re);
+		pass_tt = (TextView) findViewById(R.id.pass_tt_re);
+		retype_tt = (TextView) findViewById(R.id.rety_tt_re);
+		fullname_tt = (TextView) findViewById(R.id.fullname_tt_re);
+		ava_tt = (TextView) findViewById(R.id.ava_tt_re);
+		tt_re = (TextView) findViewById(R.id.tt_register_tt);
+
+		email.setTypeface(MainActivity.tf4);
+		password.setTypeface(MainActivity.tf4);
+		retype_password.setTypeface(MainActivity.tf4);
+		fullname.setTypeface(MainActivity.tf4);
+		ava_tt.setTypeface(MainActivity.tf3);
+		emal_tt.setTypeface(MainActivity.tf3);
+		pass_tt.setTypeface(MainActivity.tf3);
+		retype_tt.setTypeface(MainActivity.tf3);
+		fullname_tt.setTypeface(MainActivity.tf3);
+		tt_re.setTypeface(MainActivity.tf5);
 
 		// Set su kien cac view
 		previuous_re.setOnClickListener(onCloseListener());

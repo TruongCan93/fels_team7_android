@@ -36,7 +36,7 @@ public class AllCategory extends Activity {
 	public static ViewFlipper viewFlipper;
 	TextView title_lesson;
 	ImageView img;
-	TextView toast;
+	TextView toast, tt_ca;
 
 	public static RelativeLayout layout13, layout14;
 	public static Button A, B, C, D;
@@ -67,6 +67,15 @@ public class AllCategory extends Activity {
 		D = (Button) findViewById(R.id.D_le);
 		an = (TextView) findViewById(R.id.answer_le);
 		number = (TextView) findViewById(R.id.socau);
+		tt_ca=(TextView)findViewById(R.id.tt_ca_tt);
+		
+		tt_ca.setTypeface(MainActivity.tf5);
+		title_lesson.setTypeface(MainActivity.tf5);
+		A.setTypeface(MainActivity.tf6);
+		B.setTypeface(MainActivity.tf6);
+		C.setTypeface(MainActivity.tf6);
+		D.setTypeface(MainActivity.tf6);
+		an.setTypeface(MainActivity.tf7);
 
 		// Set cac su kien
 		previous.setOnClickListener(backHome());

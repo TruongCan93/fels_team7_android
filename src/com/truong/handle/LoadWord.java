@@ -38,6 +38,7 @@ public class LoadWord extends AsyncTask<UserFunctions, Void, JSONArray> {
 					User.data.add(object.getString("content"));
 				}
 				WordList.wordAdapter.notifyDataSetChanged();
+
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.d("Truong", "Loi load Lesson " + e);

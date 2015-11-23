@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Register"
+            android:id="@+id/tt_register_tt"
             android:textColor="#ffffff"
             android:textSize="27dp"
             android:textStyle="bold" />
@@ -55,6 +56,7 @@
             android:src="@drawable/email" />
 
         <TextView
+            android:id="@+id/email_tt_re"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -92,6 +94,7 @@
             android:src="@drawable/password" />
 
         <TextView
+            android:id="@+id/pass_tt_re"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -129,6 +132,7 @@
             android:src="@drawable/password" />
 
         <TextView
+            android:id="@+id/rety_tt_re"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -166,6 +170,7 @@
             android:src="@drawable/doccument" />
 
         <TextView
+            android:id="@+id/fullname_tt_re"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -202,6 +207,7 @@
             android:src="@drawable/avatar" />
 
         <TextView
+            android:id="@+id/ava_tt_re"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
